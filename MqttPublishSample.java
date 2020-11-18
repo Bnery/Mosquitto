@@ -15,6 +15,7 @@ public class MqttPublishSample {
     MemoryPersistence persistence = new MemoryPersistence();
 
     try {
+
       MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
       MqttConnectOptions connOpts = new MqttConnectOptions();
       connOpts.setCleanSession(true);
@@ -30,6 +31,7 @@ public class MqttPublishSample {
       System.out.println("Disconnected");
       System.exit(0);
     } catch(MqttException me) {
+
       System.out.println("reason "+me.getReasonCode());
       System.out.println("msg "+me.getMessage());
       System.out.println("loc "+me.getLocalizedMessage());
